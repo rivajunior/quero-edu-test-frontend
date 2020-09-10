@@ -1,0 +1,77 @@
+{
+  "name": "quero-edu-test-frontend",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint:script": "eslint ./ --ext .jsx,.js --ignore-path .gitignore  --fix",
+    "lint:style": "stylelint **/*.{vue,htm,html,css,scss} --fix",
+    "lint": "yarn lint:script && yarn lint:style"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "axios": "^0.20.0",
+    "core-js": "^3.6.5",
+    "normalize.css": "^8.0.1",
+    "register-service-worker": "^1.7.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.1.2",
+    "compression-webpack-plugin": "^5.0.1",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-import-resolver-webpack": "^0.12.2",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.2.13",
+    "sass": "^1.26.5",
+    "sass-loader": "^10.0.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-twbs-bootstrap": "^2.0.3",
+    "stylelint-webpack-plugin": "^2.1.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,vue}": "eslint --fix",
+    "*.{vue,htm,html,css,scss,sass}": "stylelint --fix"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "yarn": ">=1.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog",
+      "defaultType": "feat",
+      "maxHeaderWidth": 50,
+      "maxLineWidth": 72
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  // ===
+  // Style
+  // ===
+
+  "css.validate": false,
+  "scss.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+  "[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+  "vetur.validation.style": false,
+
+  // ===
+  // Event Triggers
+  // ===
+
+  "editor.formatOnSave": false,
+  "eslint.validate": [
+    "javascript",
+    "vue",
+    "vue-html",
+    "html"
+  ],
+  "vetur.format.enable": false,
+
+  // ===
+  // HTML
+  // ===
+
+  "html.format.enable": false,
+  "vetur.validation.template": false,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html"
+  },
+  "vetur.completion.tagCasing": "initial",
+
+  // ===
+  // JS(ON)
+  // ===
+
+  "javascript.format.enable": false,
+  "json.format.enable": false,
+  "vetur.validation.script": false,
+}

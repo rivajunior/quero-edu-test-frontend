@@ -1,0 +1,24 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=827846
+  // for the documentation about the extensions.json format
+  "recommendations": [
+    // Syntax highlighting and more for .vue files
+    // https://github.com/vuejs/vetur
+    "octref.vetur",
+
+    // Peek and go-to-definition for .vue files
+    // https://github.com/fuzinato/vscode-vue-peek
+    "dariofuzinato.vue-peek",
+
+    // Lint-on-save with:
+
+    // ESLint
+    // https://github.com/microsoft/vscode-eslint
+    "dbaeumer.vscode-eslint",
+    // Stylint
+    "stylelint.vscode-stylelint",
+
+    // Consistent coding styles
+    "editorconfig.editorconfig",
+  ]
+}

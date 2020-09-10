@@ -1,0 +1,65 @@
+$font-family-base: system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$grid-gutter-width: 30px;
+$grid-gutter-half-width: $grid-gutter-width / 2;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-size-sm: .875rem;
+$font-size-xs: .7rem;
+
+$blue: #18acc4;
+$blue-dark: #007a8d;
+$yellow: #fdcb13;
+$yellow-dark: #de9e1f;
+$green: #0fa866;
+$ink: #1f2d30;
+$gray: #fbfbfb;
+$white: #fff;
+$black: #000;
+
+$theme-colors: (
+  primary: $blue,
+  primary-dark: $blue-dark,
+  secondary: $yellow,
+  secondary-dark: $yellow-dark
+);
+
+$color-contrast-dark: $ink;
+$color-contrast-light: $white;
+
+$modal-overlay-color: rgba($ink, .88);
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio: 4.5;
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval: 8%;
+
+$border-radius-sm: 4px;
+
+$border-color: #ced4da;
+
+$box-shadow:    0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-sm: 0 1px 1px 0 rgba($ink, .08), 0 1px 3px 1px rgba($ink, .16);
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175) !default;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$zindex-dropdown:       1000;
+$zindex-sticky:         1020;
+$zindex-fixed:          1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal:          1050;
+$zindex-popover:        1060;
+$zindex-tooltip:        1070;
