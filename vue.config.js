@@ -50,4 +50,9 @@ module.exports = {
   configureWebpack: {
     plugins,
   },
+  pwa: {
+    themeColor: '#18acc4',
+    msTileColor: '#ffffff',
+    iconPaths: null,
+  },
 }
