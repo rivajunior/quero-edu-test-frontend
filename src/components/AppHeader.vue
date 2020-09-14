@@ -6,7 +6,12 @@
           :icon="infoCircleIcon"
           :class="$style.icon"
         />
-        Como funciona
+        <span :class="$style.howItWordsMobile">
+          Ajuda
+        </span>
+        <span :class="$style.howItWordsDesktop">
+          Como funciona
+        </span>
       </div>
       <a
         rel="noopener"
@@ -28,8 +33,8 @@
         </div>
       </a>
     </div>
-    <a
-      href="/"
+    <router-link
+      to="/"
       :class="$style.logo"
     >
       <img
@@ -37,14 +42,19 @@
         src="@/assets/images/logotipo.svg"
         :class="$style.logoImg"
       >
-    </a>
+    </router-link>
 
     <div :class="$style.user">
-      Nome Sobrenome
       <FontAwesomeIcon
         :icon="userIcon"
         :class="$style.icon"
       />
+      <span :class="$style.userDesktop">
+        Nome Sobrenome
+      </span>
+      <span :class="$style.userMobile">
+        Conta
+      </span>
     </div>
   </header>
 </template>
@@ -85,19 +95,30 @@ export default {
 
 .howItWords {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-right: map-get($spacers, 3);
-  margin-right: map-get($spacers, 3);
+  justify-content: center;
+  padding-right: map-get($spacers, 2);
+  margin-right: map-get($spacers, 2);
   border-right: 2px solid $gray;
 }
 
+.howItWordsDesktop,
+.userDesktop {
+  display: none;
+}
+
 .whatsapp {
-  display: flex;
+  display: none;
   align-items: center;
   font-size: $font-size-sm;
 
   .icon {
     color: #00e676;
+  }
+
+  @include media-breakpoint-desktop() {
+    display: flex;
   }
 }
 
@@ -111,7 +132,9 @@ export default {
 
 .user {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-left: auto;
 }
 
@@ -135,6 +158,25 @@ export default {
 
   &:last-child{
     margin-left: map-get($spacers, 2);
+  }
+}
+
+@include media-breakpoint-desktop() {
+  .howItWords{
+    padding-right: map-get($spacers, 3);
+    margin-right: map-get($spacers, 3);
+  }
+  .howItWordsMobile,
+  .userMobile {
+    display: none;
+  }
+  .howItWordsDesktop,
+  .userDesktop {
+    display: inline;
+  }
+
+  .user {
+    flex-direction: row-reverse;
   }
 }
 </style>

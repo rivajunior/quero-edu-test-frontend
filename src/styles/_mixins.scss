@@ -2,3 +2,9 @@
   padding-left: 0;
   list-style: none;
 }
+
+@mixin media-breakpoint-desktop {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}

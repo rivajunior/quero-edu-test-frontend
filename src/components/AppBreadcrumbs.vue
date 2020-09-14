@@ -39,7 +39,7 @@ export default {
 }
 
 .listItem {
-  display: inline-flex;
+  display: none;
   align-items: center;
   margin-right: .5rem;
   font-weight: $font-weight-bold;
@@ -58,9 +58,18 @@ export default {
     }
   }
   &:last-child {
+    display: inline-flex;
     font-weight: $font-weight-normal;
     pointer-events: none;
     cursor: auto;
+
+    &::before {
+      content: "";
+    }
+  }
+
+  @include media-breakpoint-desktop(){
+    display: inline-flex;
   }
 }
 </style>
