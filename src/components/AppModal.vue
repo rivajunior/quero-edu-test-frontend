@@ -71,7 +71,7 @@ export default {
     z-index: $zindex-modal;
     width: 100%;
     height: 100%;
-    padding: map-get($spacers, 5);
+    padding: map-get($spacers, 5) 0;
     overflow: auto;
     background-color: rgba($black, .5);
     transition: opacity .3s ease;
@@ -81,7 +81,7 @@ export default {
     position: relative;
     width: 100%;
     max-width: 750px;
-    padding: map-get($spacers, 5);
+    padding: map-get($spacers, 3);
     margin: 0 auto;
     background-color: $white;
     border-radius: 2px;
@@ -125,6 +125,13 @@ export default {
   &LeaveActive {
     .modalContainer {
       transform: scale(1.1);
+    }
+  }
+
+  @include media-breakpoint-desktop() {
+    .modalMask,
+    .modalContainer {
+      padding: map-get($spacers, 5);
     }
   }
 }

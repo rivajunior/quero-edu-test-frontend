@@ -40,12 +40,15 @@ export default {
 .card {
   display: flex;
   flex-direction: column;
-  min-height: 442px;
   padding: 1rem;
   background-color: $white;
   border: none;
   box-shadow: $box-shadow-sm;
   appearance: none;
+
+  @include media-breakpoint-desktop() {
+    min-height: 442px;
+  }
 }
 
 .cardHeader {

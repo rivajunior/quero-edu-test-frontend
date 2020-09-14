@@ -13,5 +13,10 @@ export default {
 <style lang="scss" module>
 .buttonGroup {
   display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-desktop() {
+    flex-direction: row;
+  }
 }
 </style>

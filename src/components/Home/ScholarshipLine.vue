@@ -14,22 +14,24 @@
         :class="$style.image"
       >
     </div>
-    <div :class="$style.grow">
-      <div :class="$style.courseName">
-        {{ scholarship.course.name }}
+    <div :class="$style.infoBox">
+      <div :class="$style.grow">
+        <div :class="$style.courseName">
+          {{ scholarship.course.name }}
+        </div>
+        <small>
+          {{ scholarship.course.level }}
+        </small>
       </div>
-      <div>
-        {{ scholarship.course.level }}
-      </div>
-    </div>
-    <div :class="$style.price">
-      Bolsa de
-      <span :class="$style.currency">
-        {{ scholarship.discount_percentage }}%
-      </span>
+      <div :class="$style.price">
+        Bolsa de
+        <span :class="$style.currency">
+          {{ scholarship.discount_percentage }}%
+        </span>
 
-      <div :class="$style.currency">
-        {{ scholarship.price_with_discount }}/mês
+        <div :class="$style.currency">
+          {{ scholarship.price_with_discount }}/mês
+        </div>
       </div>
     </div>
   </div>
@@ -107,6 +109,7 @@ export default {
 
 .grow {
   flex-grow: 1;
+  margin-bottom: map-get($spacers, 3);
 }
 
 .currency {
@@ -116,5 +119,15 @@ export default {
 
 .price {
   text-align: right;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-breakpoint-desktop() {
+    flex-direction: row;
+  }
 }
 </style>
