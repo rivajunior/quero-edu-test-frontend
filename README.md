@@ -1,18 +1,18 @@
-# quero-edu-test-frontend
+# Quero Bolsa - Teste Frontend
 
-## Project setup
+## Configuração do projeto
 
 ```shell
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compilação para desenvolvimento
 
 ```shell
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Compila e minifica para produção
 
 ```shell
 yarn build
@@ -21,7 +21,7 @@ yarn build
 Foram feitas otimizações para o build de produção, como a verificação de lint durante o build, tanto
 com eslint, como stylint. Além de fazer a compressão gzip e brotli
 
-### Lints and fixes files
+### Lint
 
 ```shell
 yarn lint
@@ -60,3 +60,24 @@ arquivos estão seguindo as regras de lint. Para isso foi utilizado o *husky* e 
 O git foi configurado atravez do .gitattributes para que todos os arquivos sigam a convenção de
 enlines do Unix (`LF` === `\n`). Assim devs de multiambientes podem trabalhar no mesmo repositório
 sem haver diff no git por causa de quebras de linha.
+
+## A11y
+
+Pensando em acessibilidade, o layout não foi seguido 100%. Algumas combinações de cores não seguiam
+as diretrizes de acessibilidade para contraste.
+
+Foi utilizado um algorítmo de `color-contrast` para determinar quando utilizar uma cor clara ou
+escura no texto, dependendo da cor de fundo.
+
+Para a o visual ficasse mais agradável, poderia ser negociado com o designer para mudar por tons de
+maior contraste. Pois acessibilidade deve ser vir antes de UI.
+
+Se houvesse mais tempo, o modal poderia ser trabalhado para uma melhor acessibilidade e usabilidade.
+Mas atualmente está devendo quanto a isso.
+
+## Deploy
+
+O deploy está sendo feito usando [Vercel](https://vercel.com/), configurado por integração no
+GitHub.
+
+Domínio da aplicação: <https://quero-edu-test-frontend-4b1e7mtot.vercel.app>
