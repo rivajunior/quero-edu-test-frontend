@@ -88,25 +88,39 @@ export default {
 
   // stylelint-disable-next-line selector-pseudo-class-no-unknown
   :global(.buttonGroup) & {
-    border-left-width: 0;
-    border-radius: 0;
-
-    &:first-child {
-      border-left-width: 1px;
-      border-top-left-radius: $border-radius-sm;
-      border-bottom-left-radius: $border-radius-sm;
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
-    &:last-child {
-      border-top-right-radius: $border-radius-sm;
-      border-bottom-right-radius: $border-radius-sm;
+    &:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 
-  &.active {
-    $background-color: map-get($theme-colors, primary);
+  @include media-breakpoint-desktop() {
+    // stylelint-disable-next-line selector-pseudo-class-no-unknown
+    :global(.buttonGroup) & {
+      border-left-width: 0;
+      border-radius: 0;
 
-    color: color-contrast($background-color);
-    background-color: $background-color;
+      &:first-child {
+        border-left-width: 1px;
+        border-top-left-radius: $border-radius-sm;
+        border-bottom-left-radius: $border-radius-sm;
+      }
+      &:last-child {
+        border-top-right-radius: $border-radius-sm;
+        border-bottom-right-radius: $border-radius-sm;
+      }
+    }
+
+    &.active {
+      $background-color: map-get($theme-colors, primary);
+
+      color: color-contrast($background-color);
+      background-color: $background-color;
+    }
   }
 }
 
