@@ -151,32 +151,40 @@ export default {
 
 .icon {
   font-size: 1.5rem;
-
-  &:first-child{
-    margin-right: map-get($spacers, 2);
-  }
-
-  &:last-child{
-    margin-left: map-get($spacers, 2);
-  }
 }
 
 @include media-breakpoint-desktop() {
-  .howItWords{
+  .howItWords {
     padding-right: map-get($spacers, 3);
     margin-right: map-get($spacers, 3);
   }
+
   .howItWordsMobile,
   .userMobile {
     display: none;
   }
+
   .howItWordsDesktop,
   .userDesktop {
     display: inline;
   }
 
+  .userDesktop {
+    margin-right: .5rem;
+  }
+
   .user {
     flex-direction: row-reverse;
+  }
+
+  .icon {
+    &:first-child {
+      margin-right: map-get($spacers, 2);
+    }
+
+    &:last-child {
+      margin-left: map-get($spacers, 2);
+    }
   }
 }
 </style>
