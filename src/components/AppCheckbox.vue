@@ -57,7 +57,7 @@ export default {
   font-weight: $font-weight-normal;
   text-transform: none;
 
-  & + .label:last-child {
+  + .label:last-child {
     margin-right: 0;
   }
 }
