@@ -1,8 +1,13 @@
 import Home from '@/views/Home.vue'
+import NotFound from '@/views/NotFound'
 
 const routes = [
   {
     path: '/',
+    redirect: '/bolsas-favoritas',
+  },
+  {
+    path: '/bolsas-favoritas',
     name: 'Home',
     component: Home,
     meta: {
@@ -21,6 +26,10 @@ const routes = [
         },
       ],
     },
+  },
+  {
+    path: '*',
+    component: NotFound,
   },
 ]
 

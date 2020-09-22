@@ -4,7 +4,10 @@
       <AppHeader />
       <AppNavbar />
       <AppContainer>
-        <AppBreadcrumbs :breadcrumbs="breadcrumbs" />
+        <AppBreadcrumbs
+          v-if="breadcrumbs"
+          :breadcrumbs="breadcrumbs"
+        />
       </AppContainer>
     </div>
     <div :class="$style.mainContent">
@@ -33,7 +36,7 @@ export default {
   props: {
     breadcrumbs: {
       type: Array,
-      required: true,
+      default: null,
     },
   },
 }

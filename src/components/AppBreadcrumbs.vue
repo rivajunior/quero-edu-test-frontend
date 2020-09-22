@@ -6,7 +6,10 @@
         :key="breadcrumb.name + key"
         :class="$style.listItem"
       >
-        <router-link :to="breadcrumb.route">
+        <router-link
+          :to="breadcrumb.route"
+          exact
+        >
           {{ breadcrumb.name }}
         </router-link>
       </li>
@@ -39,7 +42,7 @@ export default {
 }
 
 .listItem {
-  display: none;
+  display: inline-flex;
   align-items: center;
   margin-right: .5rem;
   font-weight: $font-weight-bold;
@@ -62,14 +65,27 @@ export default {
     font-weight: $font-weight-normal;
     pointer-events: none;
     cursor: auto;
-
+  }
+  &:nth-last-child(2){
     &::before {
+      width: $font-size-sm;
+      height: $font-size-sm;
       content: "";
+      background: url("~@/assets/images/chevron-left-solid.svg") center no-repeat;
     }
   }
+  &:not(:nth-last-child(2)) {
+    display: none;
+  }
 
-  @include media-breakpoint-desktop(){
+  @include media-breakpoint-desktop() {
     display: inline-flex;
+
+    &:nth-last-child(2){
+      &::before {
+        content: "/";
+      }
+    }
   }
 }
 </style>

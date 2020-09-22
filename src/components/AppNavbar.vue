@@ -2,31 +2,18 @@
   <nav :class="$style.nav">
     <AppContainer>
       <ul :class="$style.list">
-        <li :class="$style.listItem">
+        <li
+          v-for="link in links"
+          :key="link.to"
+          :class="$style.listItem"
+        >
           <router-link
-            to="/minha-conta"
+            :to="link.to"
             :class="$style.link"
             :active-class="$style.linkActive"
+            exact
           >
-            Minha conta
-          </router-link>
-        </li>
-        <li>
-          <router-link
-            to="/pre-matricula"
-            :class="$style.link"
-            :active-class="$style.linkActive"
-          >
-            Pré-matrículas
-          </router-link>
-        </li>
-        <li>
-          <router-link
-            to="/"
-            :class="$style.link"
-            :active-class="$style.linkActive"
-          >
-            Bolsas Favoritas
+            {{ link.text }}
           </router-link>
         </li>
       </ul>
@@ -42,6 +29,22 @@ export default {
   components: {
     AppContainer,
   },
+  data: () => ({
+    links: [
+      {
+        text: 'Minha conta',
+        to: '/minha-conta',
+      },
+      {
+        text: 'Pré-matrículas',
+        to: '/pre-matricula',
+      },
+      {
+        text: 'Bolsas Favoritas',
+        to: '/bolsas-favoritas',
+      },
+    ],
+  }),
 }
 </script>
 
