@@ -36,7 +36,7 @@ export default {
 }
 
 .list {
-  display: flex ();
+  display: flex;
   margin: 0;
   @include list-unstyled();
 }
@@ -50,6 +50,7 @@ export default {
   &:hover {
     text-decoration: underline;
   }
+
   &:not(:first-child)::before {
     display: inline-block;
     margin-right: .5rem;
@@ -60,12 +61,18 @@ export default {
       text-decoration: none;
     }
   }
+
   &:last-child {
     display: inline-flex;
     font-weight: $font-weight-normal;
     pointer-events: none;
     cursor: auto;
+
+    a {
+      color: $ink;
+    }
   }
+
   &:nth-last-child(2){
     &::before {
       width: $font-size-sm;
@@ -74,6 +81,7 @@ export default {
       background: url("~@/assets/images/chevron-left-solid.svg") center no-repeat;
     }
   }
+
   &:not(:nth-last-child(2)) {
     display: none;
   }
@@ -81,9 +89,16 @@ export default {
   @include media-breakpoint-desktop() {
     display: inline-flex;
 
+    &:not(:nth-last-child(2)) {
+      display: inline-flex;
+    }
+
     &:nth-last-child(2){
       &::before {
+        width: auto;
+        height: auto;
         content: "/";
+        background: none;
       }
     }
   }
