@@ -47,8 +47,13 @@
             </fieldset>
           </FormGroup>
           <FormGroup>
-            {{ formatedBudget }}
+            <label for="input-budget">Até quanto você pode pagar?</label>
+
+            <div aria-hidden="true">
+              {{ formatedBudget }}
+            </div>
             <input
+              id="input-budget"
               v-model="form.budget"
               type="range"
               min="0"
@@ -155,6 +160,14 @@ export default {
       })
     },
   },
+  watch: {
+    maxBudget: {
+      immediate: true,
+      handler() {
+        this.form.budget = this.maxBudget
+      },
+    },
+  },
   methods: {
     handleSubmit() {
       this.$emit(
@@ -178,13 +191,14 @@ export default {
   display: grid;
   grid-gap: $grid-gutter-half-width;
   grid-row-gap: $grid-gutter-half-width;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 .slider {
   width: 100%;
   height: .25rem;
   padding: 0;
+  margin-top: map-get($spacers, 4);
   background-color: map-get($theme-colors, primary);
   border: 0;
   border-radius: .25rem;
